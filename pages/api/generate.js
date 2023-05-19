@@ -7,23 +7,27 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix = 
-`
-Give me a random unique question based on my study notes:`;
+`Give me a random unique question based on the following material which may be my study notes, exam review, etc to help me practice for my upcoming test based on this information. :`;
 
 const generateAction = async (req, res) => {
-  // Run first prompt
   console.log(`API: ${basePromptPrefix}${req.body.userInput}\n`);
-
-  const baseCompletion = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: `${basePromptPrefix}${req.body.userInput}\n`,
-    temperature: 0.7,
-    max_tokens: 250,
-  });
-
-  const basePromptOutput = baseCompletion.data.choices.pop();
-
-  res.status(200).json({ output: basePromptOutput });
+  try {
+    const completion = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [
+        {
+          role: "system",
+          content: `You are ChatGPT, a large language model trained by OpenAI. Carefully heed the user's instructions. ${basePromptPrefix}`,
+        },
+        { role: "user", content: req.body.userInput },
+      ],
+    });
+    console.log(completion.data)
+    console.log(completion.data.choices[0].message.content);
+    res.status(200).json({ output: completion.data.choices[0].message.content });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export default generateAction;

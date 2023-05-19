@@ -25,9 +25,10 @@ const Home = () => {
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text);
+    console.log(output)
+    console.log("OpenAI replied...", JSON.stringify(output));
 
-    setApiOutput(`${output.text}`);
+    setApiOutput(`${output}`);
     setIsGenerating(false);
   };
   const callGenerateEndpoint2 = async () => {
@@ -40,14 +41,14 @@ console.log(userInput2, apiOutput)
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({userInput: "Tell me if the answer" + userInput2 + "is the right answer to the question" + apiOutput + "and congratulate me if you believe I'm right! However if my answer is wrong, then tell me how to solve it."}),
+      body: JSON.stringify({userInput: "Tell me if the answer" + userInput2 + "is the right answer to the question" + apiOutput + "and congratulate me if you believe I'm right! However if my answer is wrong, then tell me how to solve it in 2 - 5 simple sentences in 1 paragraph."}),
     });
 
     const data = await response.json();
     const { output } = data;
-    console.log("OpenAI replied...", output.text);
+    console.log("OpenAI replied...", JSON.stringify(output));
 
-    setApiOutput2(`${output.text}`);
+    setApiOutput2(`${output}`);
     setIsGenerating(false);
   };
   const onUserChangedText = (event) => {
@@ -67,11 +68,11 @@ console.log(userInput2, apiOutput)
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Vocabulate</h1>
+            <h1>Studyflow</h1>
           </div>
           <div className="header-subtitle">
             <h2>
-            Find the word you want just by describing it
+            Paste in your study notes, your teacher's exam review, etc and start practicing.
             </h2>
           </div>
         </div>
@@ -80,13 +81,13 @@ console.log(userInput2, apiOutput)
         <div className="side-by-side">
           <textarea
             className="prompt-box"
-            placeholder="start typing here"
+            placeholder="paste in your study notes, teacher's exam review, etc right here"
             value={userInput}
             onChange={onUserChangedText}
           />
           <textarea
             className="prompt-box"
-            placeholder="start typing here"
+            placeholder="write your answer here"
             value={userInput2}
             onChange={onUserChangedText2}
           />
