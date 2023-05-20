@@ -5,7 +5,7 @@ export default function Document() {
     <Html>
       <Head>
         <meta property="og:title" content="Studyflow, by Aceflow" key="title"/>
-        <meta property="og:description" content="Find any word you want just by describing it" key="description"/>
+        <meta property="og:description" content="Train your AI tutor on your own curriculum in 30 secs" key="description"/>
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
       <body>
