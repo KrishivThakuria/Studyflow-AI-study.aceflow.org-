@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <meta property="og:title" content="Vocabulate - Powered by OpenAI" key="title"/>
+        <meta property="og:title" content="Studyflow, by Aceflow" key="title"/>
         <meta property="og:description" content="Find any word you want just by describing it" key="description"/>
         <meta name="twitter:card" content="summary_large_image"></meta>
       </Head>
