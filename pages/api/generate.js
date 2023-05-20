@@ -7,7 +7,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 const basePromptPrefix = 
-`Give me a random unique question based on the following material which may be my study notes, exam review, etc to help me practice for my upcoming test based on this information. :`;
+`Give me a random unique question based on the following material which may be my study notes, exam review, etc to help me practice for my upcoming test based on this information (try to be random with your question but of course relevant to the content provided, but you should try to think random as assume I have already asked you to give me a question and of course I wouldn't want the same question twice):`;
 
 const generateAction = async (req, res) => {
   console.log(`API: ${basePromptPrefix}${req.body.userInput}\n`);

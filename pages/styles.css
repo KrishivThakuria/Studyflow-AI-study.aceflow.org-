@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-image: url("https://i.ibb.co/88Fprg8/books3.png");
+    background-color: #000d38;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -55,19 +55,23 @@ body {
     width: 100%;
     font-weight: 700;
     font-size: 72px;
-    letter-spacing: -4px;
+    letter-spacing: -2px;
     line-height: 1.2em;
     text-align: center;
     margin: 0;
-}
+    background: linear-gradient(to right,  #ff00ff, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
 .header-subtitle h2 {
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.4em;
-    color: rgba(255, 255, 255, 0.879);
+    color: #ffffff;
 }
+
 
 .prompt-container {
     place-content: flex-end center;
@@ -103,7 +107,7 @@ body {
     padding: 20px;
     position: relative;
     width: 610px;
-    max-width: 1200px;
+    max-width: 500px;
     will-change: transform;
     overflow: auto;
     outline: none;
@@ -177,7 +181,7 @@ textarea {
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
@@ -189,6 +193,7 @@ textarea {
     position: relative;
     text-decoration: none;
     width: min-content;
+    max-width: 500px;
     will-change: transform;
     cursor: pointer;
     white-space: nowrap;
@@ -326,7 +331,7 @@ textarea {
 }
 
 .output-content p {
-    text-align: start;
+    text-align: center;
     white-space: pre-line;
     color: white;
 }
@@ -420,7 +425,8 @@ textarea {
 }
 
 textarea::placeholder {
-    color: rgba(255, 255, 255, 0.648);
+    color: rgba(255, 255, 255, 0.849);
+    font-weight: 500;
   }
 
 .side-by-side {
@@ -428,3 +434,11 @@ textarea::placeholder {
     flex-direction: row;
     gap: 30px;
 }
+
+.step-one-container {
+  text-align: center;
+}
+
+.step-two-container {
+    text-align: center;
+  }

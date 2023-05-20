@@ -41,7 +41,7 @@ console.log(userInput2, apiOutput)
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({userInput: "Tell me if the answer" + userInput2 + "is the right answer to the question" + apiOutput + "and congratulate me if you believe I'm right! However if my answer is wrong, then tell me how to solve it in 2 - 5 simple sentences in 1 paragraph."}),
+      body: JSON.stringify({userInput: "You are a professional AI tutor. Tell me if the answer:" + userInput2 + ", is the right answer to the question:" + apiOutput + ",and congratulate me if you believe I'm right! Make sure to always push me in the most accurate and correct direction (if my answer is kind of right but could be better, let me know how it could be better to ensure I improve; note that you are training me for my upcoming exam) However if my answer is wrong, then tell me how to solve it in 2 - 4 simple sentences; since you're my tutor you need to teach me how to get things right when I get things wrong."}),
     });
 
     const data = await response.json();
@@ -63,7 +63,7 @@ console.log(userInput2, apiOutput)
     <div className="root">
       <Head>
        <link rel="icon" href="favicon.ico"/>
-       <title>Vocabulate</title>
+       <title>Studyflow</title>
       </Head>
       <div className="container">
         <div className="header">
@@ -79,18 +79,24 @@ console.log(userInput2, apiOutput)
         {/* Add this code here*/}
         <div className="prompt-container">
         <div className="side-by-side">
+        <div class="step-one-container">
+          <p>Step 1</p>
           <textarea
             className="prompt-box"
             placeholder="paste in your study notes, teacher's exam review, etc right here"
             value={userInput}
             onChange={onUserChangedText}
           />
+        </div>
+        <div class="step-two-container">
+        <p>Step 2</p>
           <textarea
             className="prompt-box"
             placeholder="write your answer here"
             value={userInput2}
             onChange={onUserChangedText2}
           />
+          </div>
         </div>
           
           <div className="prompt-buttons">
@@ -107,7 +113,7 @@ console.log(userInput2, apiOutput)
                 {isGenerating ? (
                   <span className="loader"></span>
                 ) : (
-                  <p>Find Your Word</p>
+                  <p>Get Quizzed</p>
                 )}
               </div>
             </a>
@@ -145,12 +151,12 @@ console.log(userInput2, apiOutput)
       </div>
       <div className="badge-container grow">
         <a
-          href="https://twitter.com/KrishivThakuria"
+          href="https://aceflow.org"
           target="_blank"
           rel="noreferrer"
         >
           <div className="badge">
-            <p>Made by Krishiv Thakuria</p>
+            <p>Go Back to Aceflow.org</p>
           </div>
         </a>
       </div>
