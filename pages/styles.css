@@ -180,7 +180,7 @@ textarea {
 
 .generate-button {
     place-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     background-color: rgb(255, 255, 255);
     border-radius: 100px;
     display: flex;
@@ -317,7 +317,12 @@ textarea {
     color: #ffffff;
     text-decoration: none;
     text-transform: none;
-    margin-top: 50;
+    margin-top: 50px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .output-content {
