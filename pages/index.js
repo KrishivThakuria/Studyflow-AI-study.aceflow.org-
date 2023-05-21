@@ -150,17 +150,6 @@ console.log(userInput2, apiOutput)
           )}
         </div>
       </div>
-      <div className="badge-container grow">
-        <a
-          href="https://aceflow.org"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <p>Go Back to Aceflow.org</p>
-          </div>
-        </a>
-      </div>
     </div>
   );
 };

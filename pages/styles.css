@@ -10,7 +10,7 @@ body {
     display: flex;
     place-content: center flex-start;
     align-items: center;
-    background-color: #000d38;
+    background-color: #000822;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -32,10 +32,10 @@ body {
     gap: 10px;
     height: fit-content;
     overflow: auto;
-    padding: 50px;
+    padding: 100px;
     position: relative;
     width: auto;
-    gap: 64px;
+    gap: 40px;
 }
 
 .header {    
