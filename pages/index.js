@@ -9,6 +9,7 @@ const Home = () => {
   const [apiOutput, setApiOutput] = useState("");
   const [apiOutput2, setApiOutput2] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isGenerating2, setIsGenerating2] = useState(false);
 
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
@@ -32,7 +33,7 @@ const Home = () => {
     setIsGenerating(false);
   };
   const callGenerateEndpoint2 = async () => {
-    setIsGenerating(true);
+    setIsGenerating2(true);
   
 console.log(userInput2, apiOutput)
     console.log("Calling OpenAI...");
@@ -49,7 +50,7 @@ console.log(userInput2, apiOutput)
     console.log("OpenAI replied...", JSON.stringify(output));
 
     setApiOutput2(`${output}`);
-    setIsGenerating(false);
+    setIsGenerating2(false);
   };
   const onUserChangedText = (event) => {
     console.log(event.target.value);
@@ -79,7 +80,7 @@ console.log(userInput2, apiOutput)
         {/* Add this code here*/}
         <div className="prompt-container">
         <div className="side-by-side">
-        <div class="step-one-container">
+        <div className="step-one-container">
           <p>Step 1</p>
           <textarea
             className="prompt-box"
@@ -88,7 +89,7 @@ console.log(userInput2, apiOutput)
             onChange={onUserChangedText}
           />
         </div>
-        <div class="step-two-container">
+        <div className="step-two-container">
         <p>Step 2</p>
           <textarea
             className="prompt-box"
@@ -119,7 +120,7 @@ console.log(userInput2, apiOutput)
             </a>
             <a
               className={
-                isGenerating ? "generate-button loading" : "generate-button"
+                isGenerating2 ? "generate-button loading" : "generate-button"
               }
               onClick={() => {
                 console.log("pressed me");
@@ -127,7 +128,7 @@ console.log(userInput2, apiOutput)
               }}
             >
               <div className="generate">
-                {isGenerating ? (
+                {isGenerating2 ? (
                   <span className="loader"></span>
                 ) : (
                   <p>Submit Answer</p>
