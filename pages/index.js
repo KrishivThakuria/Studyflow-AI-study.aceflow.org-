@@ -41,7 +41,7 @@ console.log(userInput2, apiOutput)
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({userInput: "You are a professional AI tutor. Tell me if the answer:" + userInput2 + ", is the right answer to the question:" + apiOutput + ",and congratulate me if you believe I'm right! Make sure to always push me in the most accurate and correct direction (if my answer is kind of right but could be better, let me know how it could be better to ensure I improve; note that you are training me for my upcoming exam) However if my answer is wrong, then tell me how to solve it in 2 - 4 simple sentences; since you're my tutor you need to teach me how to get things right when I get things wrong."}),
+      body: JSON.stringify({userInput: "You are a professional tutor knowledgeable in all subjects, and I just answered a question. Is my answer:" + userInput2 + ", the right answer to the question:" + apiOutput + "? If so, shortly congratulate me (but ensure I really am right, and accurate) if you believe I'm right! Make sure to always push me in the most accurate and correct direction (if my answer is kind of right but could be better, let me know how it could be better to ensure I improve; note that you are training me for my upcoming exam) However if my answer is wrong, then tell me how to solve it in max 4 sentences; since you're my tutor you need to teach me how to get things right when I get things wrong."}),
     });
 
     const data = await response.json();
