@@ -42,7 +42,7 @@ console.log(userInput2, apiOutput)
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({userInput: "You are a professional tutor knowledgeable in all subjects, and I just answered a question. Is my answer:" + userInput2 + ", the right answer to the question:" + apiOutput + "? If so, shortly congratulate me (but ensure I really am right, and accurate) if you believe I'm right! Make sure to always push me in the most accurate and correct direction (if my answer is kind of right but could be better, let me know how it could be better to ensure I improve; note that you are training me for my upcoming exam) However if my answer is wrong, then tell me how to solve it in max 4 sentences; since you're my tutor you need to teach me how to get things right when I get things wrong."}),
+      body: JSON.stringify({userInput: "You are a professional tutor knowledgeable in all subjects, and I just answered a question. Is my answer:" + userInput2 + ", the right answer to the question:" + apiOutput + "? If so, shortly congratulate me (but ensure I really am right, and accurate). Make sure to always push me in the most accurate and correct direction (if my answer is kind of right but could be better, let me know how it could be better to ensure I improve; note that you are training me for my upcoming exam) However if my answer is wrong, then tell me how to solve it in max 4 sentences; since you're my tutor you need to teach me how to get things right when I get things wrong. Although I said max 4 sentences, that is the very max and the shorter your response the better. Be as concise as possible but still be a friendly tutor. Remember, as concise as possible! Don't do anything that's not needed. For example if I get it right all I want you to say is That's right, good job!"}),
     });
 
     const data = await response.json();
@@ -73,7 +73,8 @@ console.log(userInput2, apiOutput)
           </div>
           <div className="header-subtitle">
             <h2>
-            Paste in your study notes, your teacher's exam review, etc and start practicing.
+            Paste in your study notes, your teacher's exam review, etc and start practicing!
+            <br></br>If the button loads too long just click it again while it's loading.
             </h2>
           </div>
         </div>
