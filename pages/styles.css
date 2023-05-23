@@ -43,7 +43,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
-    color: #FFF
+    color: #b790ff;
 }
 
 .header-title {
@@ -69,7 +69,7 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: 1.4em;
-    color: #ffffff;
+    color: #00ffff;
     text-align: center;
 }
 
@@ -319,7 +319,8 @@ textarea {
     text-decoration: none;
     text-transform: none;
     margin-top: 50px;
-    max-width: 80%;
+    margin-bottom: 0px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     word-wrap: break-word;
@@ -386,6 +387,7 @@ textarea {
 
     .header-subtitle h2 {
         text-align: center;
+        color: #00ffff;
     }
 
     .key-stroke, .or {
